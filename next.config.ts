@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  ...(process.env.GITHUB_ACTIONS ? { output: "export" as const } : {}),
+  basePath: process.env.GITHUB_ACTIONS ? "/netscene" : "",
+  assetPrefix: process.env.GITHUB_ACTIONS ? "/netscene/" : "",
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
