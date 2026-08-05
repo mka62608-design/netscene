@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     "codex-preview": "development",
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: process.env.GITHUB_ACTIONS ? "/netscene/favicon.svg" : "/favicon.svg",
+    shortcut: process.env.GITHUB_ACTIONS ? "/netscene/favicon.svg" : "/favicon.svg",
   },
 };
 
